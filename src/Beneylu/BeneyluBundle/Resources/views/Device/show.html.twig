@@ -1,0 +1,110 @@
+{% extends "BeneyluBundle::layout.html.twig" %}
+{% block body -%}
+
+
+
+    <div class="row">
+
+        <h1 class="header smaller lighter blue">Device Info </h1>
+
+    </div>
+    <div class="pull-right">
+        {{ form_start(delete_form, {'attr': {'class': 'form-horizontal'}} ) }}
+        <a href="{{ path('device') }}" class="btn btn-default">
+            Back to the list
+        </a>
+        <a href="{{ path('device_edit', { 'id': entity.id }) }}" class="btn btn-info">
+            Edit
+        </a>
+        {{ form_widget(delete_form.submit,{'attr': {'class': 'btn btn-danger'}} )}}
+        {{ form_rest(delete_form) }}
+
+        {{ form_end(delete_form) }} 
+    </div>
+
+    <div class="col-xs-12 col-sm-3 center">
+        <div class="profile-user-info profile-user-info-striped">
+            <div class="profile-info-row">
+                <div class="profile-info-name"> Identifier </div>
+
+                <div class="profile-info-value">
+                    <span class="editable" id="username">{{ entity.id }}</span>
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name"> Device Name </div>
+
+                <div class="profile-info-value">
+                    {{ entity.name }}
+                </div>
+            </div>
+
+            <div class="profile-info-row">
+                <div class="profile-info-name"> Operating System </div>
+
+                <div class="profile-info-value">
+                    <span class="editable" id="age">{{ entity.os }}</span>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+        <a href="{{ path('install_new')}}" class="btn btn-info">
+            Install a new Software
+        </a>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-9">
+        <div class="widget-box transparent">
+            <div class="widget-header widget-header-small">
+                <h4 class="widget-title blue smaller">
+                    <i class="ace-icon fa fa-rss orange"></i>
+                    Installed Software
+                </h4>
+
+
+
+            </div>
+
+            <div class="widget-body">
+                <div class="widget-main padding-8">
+                    <div id="profile-feed-1" class="profile-feed">
+                        {% for installation in entity.installations %}
+                            <div class="profile-activity clearfix">
+                                <div>
+
+                                    <a class="user" href="{{ path('install_show', { 'id': installation.id }) }}"> {{installation.software.name}} </a>
+                                    Is installed on it's version {{installation.version.reference}}
+                                    {% if not installation.version.latest %}
+                                        <small class="pull-right">  You may update this software </small>
+                                    {% endif %}
+
+                                    {% if installation.version.latest %}
+                                        <small class="pull-right">  This software is up to date </small>
+                                    {% endif %}
+
+                                    <div class="time">
+                                        <i class="ace-icon fa fa-clock-o bigger-110"></i>
+                                        The {{installation.date|date('Y-m-d')}} at  {{installation.date|date('H:i')}}
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        {% endfor %}
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

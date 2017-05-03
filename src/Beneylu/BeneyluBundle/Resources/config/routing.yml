@@ -1,0 +1,21 @@
+beneylu_install:
+    resource: "@BeneyluBundle/Resources/config/routing/install.yml"
+    prefix:   /install
+
+beneylu_software:
+    resource: "@BeneyluBundle/Resources/config/routing/software.yml"
+    prefix:   /software
+
+beneylu_version:
+    resource: "@BeneyluBundle/Resources/config/routing/version.yml"
+    prefix:   /version
+
+beneylu_device:
+    resource: "@BeneyluBundle/Resources/config/routing/device.yml"
+    prefix:   /device
+
+beneylu_homepage:
+    path:     /
+    defaults: { _controller: BeneyluBundle:Default:index }
+
+    

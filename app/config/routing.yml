@@ -1,0 +1,7 @@
+beneylu:
+    resource: "@BeneyluBundle/Resources/config/routing.yml"
+    prefix:   /beneylu
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

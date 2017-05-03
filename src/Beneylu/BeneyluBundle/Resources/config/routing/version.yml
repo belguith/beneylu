@@ -1,0 +1,30 @@
+version:
+    path:     /
+    defaults: { _controller: "BeneyluBundle:Version:index" }
+
+version_show:
+    path:     /{id}/show
+    defaults: { _controller: "BeneyluBundle:Version:show" }
+
+version_new:
+    path:     /new
+    defaults: { _controller: "BeneyluBundle:Version:new" }
+
+version_create:
+    path:     /create
+    defaults: { _controller: "BeneyluBundle:Version:create" }
+    methods:  POST
+
+version_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BeneyluBundle:Version:edit" }
+
+version_update:
+    path:     /{id}/update
+    defaults: { _controller: "BeneyluBundle:Version:update" }
+    methods:  [POST, PUT]
+
+version_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BeneyluBundle:Version:delete" }
+    methods:  [POST, DELETE]

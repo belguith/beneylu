@@ -1,0 +1,30 @@
+install:
+    path:     /
+    defaults: { _controller: "BeneyluBundle:Install:index" }
+
+install_show:
+    path:     /{id}/show
+    defaults: { _controller: "BeneyluBundle:Install:show" }
+
+install_new:
+    path:     /new
+    defaults: { _controller: "BeneyluBundle:Install:new" }
+
+install_create:
+    path:     /create
+    defaults: { _controller: "BeneyluBundle:Install:create" }
+    methods:  POST
+
+install_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BeneyluBundle:Install:edit" }
+
+install_update:
+    path:     /{id}/update
+    defaults: { _controller: "BeneyluBundle:Install:update" }
+    methods:  [POST, PUT]
+
+install_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BeneyluBundle:Install:delete" }
+    methods:  [POST, DELETE]

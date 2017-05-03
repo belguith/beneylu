@@ -1,0 +1,30 @@
+software:
+    path:     /
+    defaults: { _controller: "BeneyluBundle:Software:index" }
+
+software_show:
+    path:     /{id}/show
+    defaults: { _controller: "BeneyluBundle:Software:show" }
+
+software_new:
+    path:     /new
+    defaults: { _controller: "BeneyluBundle:Software:new" }
+
+software_create:
+    path:     /create
+    defaults: { _controller: "BeneyluBundle:Software:create" }
+    methods:  POST
+
+software_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BeneyluBundle:Software:edit" }
+
+software_update:
+    path:     /{id}/update
+    defaults: { _controller: "BeneyluBundle:Software:update" }
+    methods:  [POST, PUT]
+
+software_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BeneyluBundle:Software:delete" }
+    methods:  [POST, DELETE]

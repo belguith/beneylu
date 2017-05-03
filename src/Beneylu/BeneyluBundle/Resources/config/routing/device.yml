@@ -1,0 +1,30 @@
+device:
+    path:     /
+    defaults: { _controller: "BeneyluBundle:Device:index" }
+
+device_show:
+    path:     /{id}/show
+    defaults: { _controller: "BeneyluBundle:Device:show" }
+
+device_new:
+    path:     /new
+    defaults: { _controller: "BeneyluBundle:Device:new" }
+
+device_create:
+    path:     /create
+    defaults: { _controller: "BeneyluBundle:Device:create" }
+    methods:  POST
+
+device_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BeneyluBundle:Device:edit" }
+
+device_update:
+    path:     /{id}/update
+    defaults: { _controller: "BeneyluBundle:Device:update" }
+    methods:  [POST, PUT]
+
+device_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BeneyluBundle:Device:delete" }
+    methods:  [POST, DELETE]
